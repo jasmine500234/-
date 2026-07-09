@@ -29,26 +29,23 @@ print("任务3：奇数行：")
 print(part3)
 
 # 练习3
-# 1. 两个(2,3)随机数组
 A = np.random.randint(1, 6, size=(2, 3))
 B = np.random.randint(1, 6, size=(2, 3))
 print("A:\n", A)
 print("B:\n", B)
 
-elem_mul = A * B          # 逐元素乘法
-mat_mul = A @ B.T         # 矩阵乘法（B要转置才能2×3 @ 3×2）
+elem_mul = A * B   
+mat_mul = A @ B.T        
 print("\n逐元素乘法 A*B：\n", elem_mul)
 print("矩阵乘法 A @ B.T：\n", mat_mul)
 
-# 2. 按行、列求和
 M = np.array([[1, 2], [3, 4]])
-sum_col = np.sum(M, axis=0)   # axis=0 列求和
-sum_row = np.sum(M, axis=1)   # axis=1 行求和
+sum_col = np.sum(M, axis=0)   
+sum_row = np.sum(M, axis=1)   
 print("\n数组M：\n", M)
 print("按列求和(axis=0):", sum_col)
 print("按行求和(axis=1):", sum_row)
 
-# 3. 均值、标准差、四舍五入
 vec = np.array([1.2, 3.5, 2.8])
 mean_v = np.mean(vec)
 std_v = np.std(vec)
@@ -59,17 +56,14 @@ print("标准差：", std_v)
 print("四舍五入：", round_v)
 
 # 练习4
-# 1. 长度为10，0~1随机浮点数
 x = np.random.rand(10)
 print("原始浮点数组 x：\n", x)
 
-# 归一化到 [0,100]
 x_min = x.min()
 x_max = x.max()
 x_norm = (x - x_min) / (x_max - x_min) * 100
 print("\n归一化到0~100：\n", x_norm)
 
-# 2. 累计和、累计最大值
 cumsum_x = np.cumsum(x_norm)
 cummax_x = np.maximum.accumulate(x_norm)
 print("\n累计和 cumsum：\n", cumsum_x)
